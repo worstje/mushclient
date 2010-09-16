@@ -2751,7 +2751,7 @@ const char * TFormat (const char * sFormat, ...)
               break;
 
             case 'L':
-              dArg = va_arg (sstrings, __int64);
+              dArg = (double) va_arg (sstrings, __int64);  /* precision loss */
               break;
 
             default:
@@ -2770,7 +2770,7 @@ const char * TFormat (const char * sFormat, ...)
               break;
 
             case 'L':
-              dArg = va_arg (sstrings, /* unsigned */ __int64);  // not implemented in this version
+              dArg = (double) va_arg (sstrings, /* unsigned */ __int64);  // not implemented in this version
               break;
 
             default:
