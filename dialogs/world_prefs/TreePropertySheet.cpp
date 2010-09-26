@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "TreePropertySheet.h"
+#include "themeglue.h"
 
 #ifdef _DEBUG
 //#define new DEBUG_NEW
@@ -260,6 +261,8 @@ void CTreePropertySheet::OnPaint()
 BOOL CTreePropertySheet::OnInitDialog() 
 {
 	CPropertySheet::OnInitDialog();
+
+	ThemeGlue_EnableThemeDialogTexture(m_hWnd, ETDT_ENABLETAB);
 	
 	if(m_bSpecialCaption) {
 		CRect	rcWindow;
